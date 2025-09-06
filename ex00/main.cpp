@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohaben- <mohaben-@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/06 17:39:09 by mohaben-          #+#    #+#             */
+/*   Updated: 2025/09/06 17:39:13 by mohaben-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 int	main(void)
@@ -6,7 +18,7 @@ int	main(void)
 	{
 		Bureaucrat	b1("Mohamed", 1);
 		std::cout << b1 << std::endl;
-		b1.incrGrade();
+		b1.increment();
 		std::cout << b1 << std::endl;
 	}
 	catch (std::exception& e)
@@ -18,7 +30,7 @@ int	main(void)
 	{
 		Bureaucrat	b2("ooohhh ghi mandatory", 150);
 		std::cout << b2 << std::endl;
-		b2.decrGrade();
+		b2.decrement();
 		std::cout << b2 << std::endl;
 	}
 	catch (std::exception& e)
@@ -37,3 +49,4 @@ int	main(void)
 	}
 	return (0);
 }
+

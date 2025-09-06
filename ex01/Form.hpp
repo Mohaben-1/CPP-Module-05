@@ -1,7 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohaben- <mohaben-@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/06 17:55:37 by mohaben-          #+#    #+#             */
+/*   Updated: 2025/09/06 18:37:47 by mohaben-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 
-#include <string>
-#include <iostream>
 #include "Bureaucrat.hpp"
 
 class	Form
@@ -13,25 +23,26 @@ class	Form
 		const int			execGrade;
 	public:
 		Form();
-		Form(const std::string name, int signGrade, int execGrade);
+		Form(std::string _name, int _signGrade, int _execGrade);
 		Form(const Form& copy);
 		Form&	operator=(const Form& copy);
 		~Form();
+
 		std::string	getName() const;
 		bool		getIsSigned() const;
 		int			getSignGrade() const;
 		int			getExecGrade() const;
-		void		beSigned(const class Bureaucrat& bureaucrat);
-		class GradeTooHighException : public std::exception
+		void		beSigned(const Bureaucrat& b);
+		class	GradeTooHighException : public std::exception
 		{
 			public:
-				const char* what() const throw();
+				const char	*what() const throw();
 		};
-		class GradeTooLowException : public std::exception
+		class	GradeTooLowException : public std::exception
 		{
 			public:
-				const char* what() const throw();
+				const char	*what() const throw();
 		};
 };
 
-std::ostream&	operator<<(std::ostream& os, const Form& form);
+std::ostream&	operator<<(std::ostream& os, const Form& f);
