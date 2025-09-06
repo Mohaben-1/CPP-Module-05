@@ -6,7 +6,7 @@
 /*   By: mohaben- <mohaben-@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/06 17:55:37 by mohaben-          #+#    #+#             */
-/*   Updated: 2025/09/06 20:22:46 by mohaben-         ###   ########.fr       */
+/*   Updated: 2025/09/06 20:45:06 by mohaben-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ class	AForm
 		AForm&	operator=(const Form& copy);
 		~AForm();
 
-		std::string	getName() const;
-		bool		getIsSigned() const;
-		int			getSignGrade() const;
-		int			getExecGrade() const;
-		void		beSigned(const Bureaucrat& b);
+		std::string		getName() const;
+		bool			getIsSigned() const;
+		int				getSignGrade() const;
+		int				getExecGrade() const;
+		void			beSigned(const Bureaucrat& b);
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 		class	GradeTooHighException : public std::exception
 		{
 			public:
