@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohaben- <mohaben-@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/08 19:27:03 by mohaben-          #+#    #+#             */
-/*   Updated: 2025/09/08 19:29:08 by mohaben-         ###   ########.fr       */
+/*   Created: 2025/09/08 19:44:41 by mohaben-          #+#    #+#             */
+/*   Updated: 2025/09/08 20:43:19 by mohaben-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-class	PresidentialPardonForm : public AForm
+class	Intern
 {
-	private:
-		std::string	target;
 	public:
-		PresidentialPardonForm();
-		PresidentialPardonForm(const std::string& _target);
-		PresidentialPardonForm(const PresidentialPardonForm& copy);
-		PresidentialPardonForm&	operator=(const PresidentialPardonForm& copy);
-		~PresidentialPardonForm();
+		Intern();
+		Intern(const Intern& copy);
+		Intern&	operator=(const Intern& copy);
+		~Intern();
 
-		void	execute(Bureaucrat const & executor) const;
+		AForm	*makeForm(std::string form_name, std::string form_target);
 };

@@ -6,40 +6,53 @@
 /*   By: mohaben- <mohaben-@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/06 19:07:29 by mohaben-          #+#    #+#             */
-/*   Updated: 2025/09/06 19:20:01 by mohaben-         ###   ########.fr       */
+/*   Updated: 2025/09/08 19:41:14 by mohaben-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-int	main(void)
+int main()
 {
 	try
 	{
-		Bureaucrat	bureaucrat("Mohamed", 1);
-		Form		form("Form", 1, 1);
+		Bureaucrat high("HighRank", 1);
+		Bureaucrat low("LowRank", 150);
 
-		std::cout << bureaucrat << std::endl;
-		std::cout << form << std::endl;
+		ShrubberyCreationForm shrub("garden");
+		RobotomyRequestForm robo("Bender");
+		PresidentialPardonForm pardon("Arthur");
 
-		bureaucrat.decrement();
-		std::cout << bureaucrat << std::endl;
-		
-		bureaucrat.signForm(form);
-		
-		std::cout << form << std::endl;
+		std::cout << shrub << std::endl;
+		std::cout << robo << std::endl;
+		std::cout << pardon << std::endl;
 
-		bureaucrat.increment();
-		
-		std::cout << bureaucrat << std::endl;
-		
-		bureaucrat.signForm(form);
-		
-		std::cout << form << std::endl;
+		std::cout << "\n--- LowRank tries to sign ---" << std::endl;
+		low.signForm(shrub);
+		low.signForm(robo);
+		low.signForm(pardon);
+
+		std::cout << "\n--- HighRank signs everything ---" << std::endl;
+		high.signForm(shrub);
+		high.signForm(robo);
+		high.signForm(pardon);
+
+		std::cout << "\n--- LowRank tries to execute ---" << std::endl;
+		low.executeForm(shrub);
+		low.executeForm(robo);
+		low.executeForm(pardon);
+
+		std::cout << "\n--- HighRank executes everything ---" << std::endl;
+		high.executeForm(shrub);
+		high.executeForm(robo);
+		high.executeForm(pardon);
+
 	}
-	catch (const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
+	catch (std::exception& e) {
+		std::cout << "Caught exception: " << e.what() << std::endl;
 	}
 	return (0);
 }
