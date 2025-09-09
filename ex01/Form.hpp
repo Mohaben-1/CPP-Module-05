@@ -6,7 +6,7 @@
 /*   By: mohaben- <mohaben-@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/06 17:55:37 by mohaben-          #+#    #+#             */
-/*   Updated: 2025/09/08 20:54:32 by mohaben-         ###   ########.fr       */
+/*   Updated: 2025/09/09 15:38:22 by mohaben-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ class	Form
 		bool		getIsSigned() const;
 		int			getSignGrade() const;
 		int			getExecGrade() const;
+
 		void		beSigned(const Bureaucrat& b);
+
 		class	GradeTooHighException : public std::exception
 		{
 			public:

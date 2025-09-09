@@ -6,7 +6,7 @@
 /*   By: mohaben- <mohaben-@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 13:22:46 by mohaben-          #+#    #+#             */
-/*   Updated: 2025/09/08 20:54:25 by mohaben-         ###   ########.fr       */
+/*   Updated: 2025/09/09 15:38:03 by mohaben-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ class Bureaucrat
 
 		std::string	getName() const;
 		int			getGrade() const;
+
 		void		increment();
 		void		decrement();
 		void		signForm(Form& f) const;
+
 		class	GradeTooHighException : public std::exception
 		{
 			public:
